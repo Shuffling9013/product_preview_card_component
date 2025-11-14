@@ -1,4 +1,151 @@
+@font-face {
+  font-family: Monsterrat;
+  font-weight: 500, 700;
+  font-display: swap;
+  src: url(../public/fonts/Montserrat-VariableFont_wght.ttf) format(truetype);
+}
+
+@font-face {
+  font-family: Fraunces;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../public/fonts/Fraunces_72pt-Bold.ttf) format(truetype);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  font-family: Monsterrat, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+
+  --large-text-size: clamp(1.5rem, calc(1.5rem + 0.8vw), 2rem);
+  --normal-text-size: clamp(0.5rem, calc(0.5rem + 0.8vw), 1rem);
+  --gap-size: clamp(1rem, calc(1rem + 2vw), 2rem);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: var(--cream);
+}
+
+.card {
+  display: flex;
+  margin: 1rem;
+  width: 40rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card picture img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card article {
+  display: flex;
+  flex-direction: column;
+  max-width: 53%;
+  gap: var(--gap-size);
+  padding: 2rem;
+}
+
+.card article .badge {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--grey);
+}
+
+.card article .title {
+  font-family: Fraunces;
+  font-weight: 700;
+  font-size: var(--large-text-size);
+  line-height: 1;
+  color: var(--black);
+}
+
+.card article .description {
+  font-size: var(--normal-text-size);
+  line-height: 1.5;
+  color: var(--grey);
+}
+
+.card article .pricing {
+  strong {
+    margin-right: 0.5em;
+    font-family: Fraunces;
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: var(--large-text-size);
+    color: var(--green-500);
+  }
+
+  s {
+    vertical-align: middle;
+    font-size: var(--normal-text-size);
+    color: var(--grey);
+  }
+}
+
+.card article button {
+  height: 3em;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--green-500);
+  color: var(--white);
+
+  font-weight: 700;
+  font-size: var(--normal-text-size);
+
+  img {
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: baseline;
+  }
+
+  span {
+    vertical-align: baseline;
+  }
+}
+
+.card article button:hover {
+  background-color: var(--green-700);
+  cursor: grab;
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card article {
+    padding: 1rem;
+    max-width: 100%;
+  }
 }
