@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "fmt": "prettier -w .",
+    "bundle": "bun build --production --outdir dist src/index.html",
     "serve": "bun src/serve.ts"
   },
   "devDependencies": {
