@@ -38,7 +38,6 @@ picture {
 
   --large-text-size: clamp(1.5rem, calc(1.5rem + 0.8vw), 2rem);
   --normal-text-size: clamp(0.5rem, calc(0.5rem + 0.8vw), 1rem);
-  --gap-size: clamp(1rem, calc(1rem + 2vw), 2rem);
 }
 
 html,
@@ -71,8 +70,9 @@ main {
 .card article {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
   max-width: 53%;
-  gap: var(--gap-size);
   padding: 2rem;
 }
 
@@ -83,7 +83,7 @@ main {
 }
 
 .card article .title {
-  font-family: Fraunces;
+  font-family: Fraunces, Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: var(--large-text-size);
   line-height: 1;
@@ -98,8 +98,8 @@ main {
 
 .card article .pricing {
   strong {
-    margin-right: 0.5em;
-    font-family: Fraunces;
+    margin-inline-end: 0.5em;
+    font-family: Fraunces, Arial, Helvetica, sans-serif;
     font-weight: 700;
     vertical-align: middle;
     font-size: var(--large-text-size);
@@ -123,9 +123,11 @@ main {
   font-weight: 700;
   font-size: var(--normal-text-size);
 
+  transition: background-color 0.2s;
+
   img {
     display: inline-block;
-    margin-right: 0.5rem;
+    margin-inline-end: 0.5rem;
     vertical-align: baseline;
   }
 
@@ -139,7 +141,7 @@ main {
   cursor: grab;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 38rem) {
   .card {
     flex-direction: column;
   }
